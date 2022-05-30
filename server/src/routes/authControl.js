@@ -1,13 +1,11 @@
-const express=require('express');
+const express = require('express');
 const bcrypt = require("bcrypt");
-const router= new express.Router;
-const userdb=require('../model/user');
-const app=express();
+const router = new express.Router;
+const userdb = require('../models/user');
+const app = express();
 const jwt = require('jsonwebtoken');
 
-
 router.post('/register',async(req,res)=>{
-    
     try{
         const hashPass = await bcrypt.hash(req.body.password, 10);
         
@@ -17,7 +15,6 @@ router.post('/register',async(req,res)=>{
         confirmPassword: hashPass
     })
 
-    
     res.json({
         status:'success',
         data:await newuser.save()
@@ -31,6 +28,7 @@ router.post('/register',async(req,res)=>{
     }
     
 })
+
 router.post('/login',async(req,res)=>{
     let user=await userdb.findOne({email:req.body.email});
     if (!user){
