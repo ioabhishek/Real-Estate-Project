@@ -4,7 +4,7 @@ import SideBar from './LeftSideBar';
 import Listing from './PropertyListing';
 
 
-function HomePage() {
+const HomePage=()=> {
   return (<>
       <NavBar/>
       <SideBar/>
