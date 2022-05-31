@@ -1,4 +1,4 @@
-function NavBar() {
+const NavBar=()=> {
     return (<>
         <div className="">
           <nav className="nav-bar">

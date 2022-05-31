@@ -1,4 +1,4 @@
-function SideBar() {
+const SideBar=()=> {
     return (<>
     <ul>
     <h1>Logo</h1>
