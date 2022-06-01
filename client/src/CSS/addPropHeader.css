@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Readex+Pro:wght@200;300;400;500;600;700&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Readex Pro', sans-serif;
+}
+
+.steps {
+  display: flex;
+  justify-content: space-between;
+  background-color: #ffffff;
+  box-shadow: 10px 14px 70px rgba(0, 0, 0, 0.03);
+  margin: 10px;
+  border-radius:50px;
+}
+
+.step {
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+}
+
+.num, .st {
+  margin: 5px;
+}
+
+.num {
+  border-radius: 50%;
+  width: 34px;
+  height: 34px;
+  padding: 7px;
+  background: #E1F9F4;
+  color: #000;
+  text-align: center;
+}
+
+.st{
+  width: fit-content;
+  height: 34px;
+  padding: 7px;
+}
+
+.step:hover {
+  background: #6AB4F8;
+  border-radius: 50px ;
+}
+
+.step:hover .st {
+  background: #6AB4F8;
+  border-radius: 50px ;
+  color: white;
+}
+
+.step:hover .num {
+  background: #ffffff;
+  border-radius: 50px ;
+  color: black;
+}
