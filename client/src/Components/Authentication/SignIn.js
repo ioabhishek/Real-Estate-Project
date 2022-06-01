@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 const SignIn=()=>{
   return(<>
   <div className="form-container">
@@ -24,18 +25,20 @@ const SignIn=()=>{
               placeholder="Password"
             />
           </div><br /><br />
+          <Link to="/homepage">
           <button type="submit" className="btn-primary">
             Sign In
-          </button>
+          </button></Link>
           <br /><br />
+          <Link to='/register'>
           <button type="submit" className="btn-light">
             Sign Up
-          </button>
+          </button></Link>
         </form>
         <br /><br />
         <div className="bottom-container">
           <p>
-            Don't have an account? <a href="/register">Sign up</a>
+            Don't have an account? <Link to="/register">Sign up</Link>
           </p>
         </div>
       </div>

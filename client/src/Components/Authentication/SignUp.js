@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 const SignUp=()=>{
   return(<>
   <div className="form-container">
@@ -23,10 +24,19 @@ const SignUp=()=>{
               id="exampleInputPassword1"
               placeholder="Password"
             />
+          </div><br />
+          <div className="mb-3">
+            {/* <label htmlFor='exampleInputPassword1' className="form-label"></label> */}
+            <input
+              type="password"
+              className="form-control"
+              id="exampleInputPassword1"
+              placeholder="Confirm Password"
+            />
           </div><br /><br />
-          <button type="submit" className="btn-primary">
+         <Link to='/' ><button type="submit" className="btn-primary">
             Sign Up
-          </button>
+          </button></Link>
           <br /><br />
           {/* <button type="submit" className="btn-light">
             Sign Up
@@ -35,7 +45,7 @@ const SignUp=()=>{
         <br /><br />
         <div className="bottom-container">
           <p>
-            <a href="/register">Sign In</a>
+            <Link to='/'>Sign In</Link>
           </p>
         </div>
       </div>
