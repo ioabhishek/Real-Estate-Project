@@ -34,12 +34,8 @@ const Listing=()=> {
                   <td>00</td>
                   <td>action</td>
               </tr>        
-  
           </table>
-          
       </div> 
-
   </>)}
   
   export default Listing;
-  
