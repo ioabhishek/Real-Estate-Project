@@ -1,21 +1,14 @@
-import "./App.css";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import SignIn from "./Components/Authentication/SignIn";
-import SignUp from './Components/Authentication/SignUp';
-import HomePage from './Components/property-listing/HomePage'
+import React from 'react';
+import './App.css';
+import HomePage from './Components/property-listing/HomePage';
+// import Form from './Components/AddNewProperty/Form';
+
 function App() {
   return (
-    
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<SignIn />}></Route>
-          
-          <Route path="/register" element={<SignUp />} />
-          <Route path="/homepage" element={<HomePage />} />
-          <Route path="*" element ={""}/>
-        
-      </Routes>
-    </BrowserRouter>
+    <div className="App">
+      <HomePage/>
+      {/* <Form/> */}
+    </div>
   );
 }
 

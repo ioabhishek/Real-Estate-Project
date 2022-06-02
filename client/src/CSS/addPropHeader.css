@@ -16,14 +16,10 @@
   border-radius:50px;
 }
 
-.step {
+#step {
   display: flex;
   flex-direction: row;
   padding: 10px;
-}
-
-.num, .st {
-  margin: 5px;
 }
 
 .num {
@@ -42,18 +38,17 @@
   padding: 7px;
 }
 
-.step:hover {
+#schange:hover {
   background: #6AB4F8;
   border-radius: 50px ;
 }
 
-.step:hover .st {
-  background: #6AB4F8;
+#schange:hover .st {
   border-radius: 50px ;
   color: white;
 }
 
-.step:hover .num {
+#schange:hover .num {
   background: #ffffff;
   border-radius: 50px ;
   color: black;
