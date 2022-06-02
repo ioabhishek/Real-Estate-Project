@@ -6,7 +6,7 @@ import { useEffect } from 'react';
 import {Link} from 'react-router-dom'
 const Listing=()=> {
     const [items, setItems] = useState([]);
-  // const[property,setProperty]=useState([]);
+  
     useEffect(() => {
         
         fetch("http://localhost:5000/addedproperty")
@@ -19,7 +19,7 @@ const Listing=()=> {
       }, [])
     console.log(items) 
 
-    
+
   const searchHandle=async (e)=>{
     let key=e.target.value;
     if(key){
