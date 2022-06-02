@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import Firststep from './Firststep';
-import Secondstep from './Secondstep';
-import Thirdstep from './Thirdstep';
-import Fourthstep from './Fourthstep';
+import Firststep from './FirstStep';
+import Secondstep from './SecondStep';
+import Thirdstep from './ThirdStep';
+import Fourthstep from './FourthStep';
 import '../../CSS/form.css';
 
 function Form() {
