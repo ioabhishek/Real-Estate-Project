@@ -23,6 +23,10 @@ async function main() {
   app.use(express.urlencoded({extended:true}));
   app.use("/", authRoute);
   app.use("/", propRoute);
+  app.get("/logout",(req,res)=>{
+    req.logout();
+    res.redirect("/");
+});
 
   app.listen(PORT, () => {
     console.log(`Server is running at PORT ${PORT}`);
