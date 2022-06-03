@@ -1,17 +1,19 @@
 const router = require('express').Router();
 const Property = require('../models/property');
 
+
 router.post('/addproperty', async(req, res) => {
-  const { property_type, mobile, total_area } = req.body;
+  console.log(req.body);
+  const { property, mobile, area } = req.body;
 
   try {
-    let property = new Property ({
-      property_type: property_type,
+    let pro = new Property ({
+      property: property,
       mobile: mobile,
-      total_area: total_area
+      area: area
     });
 
-    await property.save();
+    await pro.save();
     res.status(201).send();
 
   } catch(e) {

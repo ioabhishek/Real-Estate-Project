@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 import Firststep from './FirstStep';
 import Secondstep from './SecondStep';
 import Thirdstep from './ThirdStep';
 import Fourthstep from './FourthStep';
+
 import '../../CSS/form.css';
 
 function Form() {
@@ -29,9 +31,6 @@ function Form() {
 
   return (
     <div className='form'>
-      <div className="progressbar">
-      </div>
-
       <div className="form-containter">
         <div className="body">{PageDisplay()}</div>
         <div className="footer">
@@ -42,12 +41,20 @@ function Form() {
               setPage((currPage) => currPage - 1);  
             }}
           >Previous</button>
+
           <button 
             className='next'
             onClick={() => {
               if (page === FormTitles.length-1) {
                 alert('Form Submitted')
                 console.log(formData)
+////////////////////////////////////////////////////
+                axios({
+                  method: "post",
+                  url: "http://localhost:5000/addproperty",
+                  data: formData
+                })
+//////////////////////////////////////////////////////
               } else {
                 setPage((currPage) => currPage + 1);
               }
