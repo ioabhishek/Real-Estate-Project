@@ -23,11 +23,16 @@ async function main() {
   app.use(express.urlencoded({extended:true}));
   app.use("/", authRoute);
   app.use("/", propRoute);
-  app.get("/logout",(req,res)=>{
-    req.logout();
-    res.redirect("/");
-});
-
+  app.get("/logout", authRoute ,async(req,res)=>{
+    try {
+      res.clearCookie("jwtoken")
+      console.log("logout successfully");
+      await user.save()
+      res.render("login")
+    } catch (error) {
+      res.status(500).send(error)
+    }
+  });
   app.listen(PORT, () => {
     console.log(`Server is running at PORT ${PORT}`);
   });
