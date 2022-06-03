@@ -5,9 +5,10 @@ const propRoute = require('./src/routes/propertyRoutes');
 const searchRoute = require('./src/routes/searchcontrol');
 const PORT = process.env.PORT || 5000;
 const bodyParser = require("body-parser");
+const Cors = require('cors');
 
 const app = express();
-
+app.use(Cors());
 async function connectDB() {
   try {
     // await mongoose.connect("mongodb+srv://ioabhishek:ioabhishek123@cluster0.r2osl.mongodb.net/?retryWrites=true&w=majority");
@@ -24,6 +25,7 @@ async function main() {
   app.use(express.urlencoded({extended:true}));
   app.use("/", authRoute);
   app.use("/", propRoute);
+<<<<<<< HEAD
   app.get("/logout", authRoute ,async(req,res)=>{
     try {
       res.clearCookie("jwtoken")
@@ -34,6 +36,10 @@ async function main() {
       res.status(500).send(error)
     }
   });
+=======
+
+
+>>>>>>> add-new-property
   app.listen(PORT, () => {
     console.log(`Server is running at PORT ${PORT}`);
   });
