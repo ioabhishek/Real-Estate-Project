@@ -33,12 +33,12 @@ const Listing=()=> {
     }
   }
     return (<>
-  <div className="conent">
+  <div className="content">
     <div className="searchbar">
     <form class="search-bar">
               <input type="text" id="search" placeholder="Search PPD ID" onChange={searchHandle}/>
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-          </form></div>
+              <svg  xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+              </form></div>
     <div className="addbutton">
       {/* <Link to='/basicInfo'> */}
     <button type="button" class="button">+ Add Property</button>
