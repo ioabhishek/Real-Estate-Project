@@ -37,14 +37,14 @@ const SignUp=()=>{
       
       if (!(email && password && confirmPassword)){
         window.alert("Please fill all the fields");
-      }else{
+      } else {
         
         if(password===confirmPassword)  {
           window.alert("Registration Successfull");
           console.log("Registration Successfull");
           history("/")
   
-        } else{
+        } else {
           window.alert("Password did not matched")
         }
       }
