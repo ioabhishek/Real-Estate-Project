@@ -2,6 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const authRoute = require("./src/routes/authControl");
 const propRoute = require('./src/routes/propertyRoutes');
+const searchRoute = require('./src/routes/searchcontrol');
 const PORT = process.env.PORT || 5000;
 const bodyParser = require("body-parser");
 
@@ -9,8 +10,8 @@ const app = express();
 
 async function connectDB() {
   try {
-    await mongoose.connect("mongodb+srv://ioabhishek:ioabhishek123@cluster0.r2osl.mongodb.net/?retryWrites=true&w=majority");
-    // await mongoose.connect("mongodb://localhost:27017/add-property");
+    // await mongoose.connect("mongodb+srv://ioabhishek:ioabhishek123@cluster0.r2osl.mongodb.net/?retryWrites=true&w=majority");
+    await mongoose.connect("mongodb://localhost:27017/add-property");
     console.log("Connection is successfull")
   } catch (e) {
     console.log(e);
@@ -27,6 +28,7 @@ async function main() {
     req.logout();
     res.redirect("/");
 });
+  app.use("/", searchRoute)
 
   app.listen(PORT, () => {
     console.log(`Server is running at PORT ${PORT}`);
