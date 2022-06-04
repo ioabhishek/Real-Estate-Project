@@ -4,7 +4,7 @@ import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
-const Listing = () => {
+function Listing(){
   const [items, setItems] = useState([]);
 
   useEffect(() => {
@@ -79,7 +79,8 @@ const Listing = () => {
             <th>Action</th>
           </tr>
 
-          {items.length > 0 ? (
+          {
+          items.length > 0 ? 
             items.map((item, i) => (
               <tr key={i}>
                 <td>{item.PPDID}</td>
@@ -93,9 +94,9 @@ const Listing = () => {
                 <td>action</td>
               </tr>
             ))
-          ) : (
+          : 
             <p className="res">No Result</p>
-          )}
+          }
         </table>
       </div>
     </>
