@@ -1,9 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Readex+Pro:wght@200;300;400;500;600;700&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700&display=swap');
+ */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Readex Pro', sans-serif;
+  /* font-family: 'Nunito', sans-serif; */
+  font-family: 'Inter', sans-serif;
 }
 
 .steps {
@@ -16,14 +19,10 @@
   border-radius:50px;
 }
 
-.step {
+#step {
   display: flex;
   flex-direction: row;
   padding: 10px;
-}
-
-.num, .st {
-  margin: 5px;
 }
 
 .num {
@@ -32,7 +31,7 @@
   height: 34px;
   padding: 7px;
   background: #E1F9F4;
-  color: #000;
+  color: #AAAAAA;
   text-align: center;
 }
 
@@ -40,20 +39,20 @@
   width: fit-content;
   height: 34px;
   padding: 7px;
+  color: #AAAAAA;
 }
 
-.step:hover {
+.schange {
   background: #6AB4F8;
   border-radius: 50px ;
 }
 
-.step:hover .st {
-  background: #6AB4F8;
+.schange .st {
   border-radius: 50px ;
   color: white;
 }
 
-.step:hover .num {
+.schange .num {
   background: #ffffff;
   border-radius: 50px ;
   color: black;

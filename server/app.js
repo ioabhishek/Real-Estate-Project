@@ -5,9 +5,10 @@ const propRoute = require('./src/routes/propertyRoutes');
 const searchRoute = require('./src/routes/searchcontrol');
 const PORT = process.env.PORT || 5000;
 const bodyParser = require("body-parser");
+const Cors = require('cors');
 
 const app = express();
-
+app.use(Cors());
 async function connectDB() {
   try {
     await mongoose.connect("mongodb+srv://ioabhishek:ioabhishek123@cluster0.r2osl.mongodb.net/?retryWrites=true&w=majority");
