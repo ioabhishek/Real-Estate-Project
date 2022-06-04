@@ -1,7 +1,6 @@
 import { Nav, NavDropdown } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
-
-import Cookies from 'js-cookie'
+import Cookies from 'js-cookie';
 
 const NavBar = () => { 
   let user = JSON.parse(localStorage.getItem('user'))
@@ -16,7 +15,7 @@ const NavBar = () => {
     // console.log(Cookies);
     
     history("/")
-   
+
   }
   return (
     <>
