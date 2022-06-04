@@ -1,22 +1,28 @@
 import { Nav, NavDropdown } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
-// import { useState } from "react";
-import Cookies from 'js-cookie'
+import Cookies from 'js-cookie';
 
 const NavBar = () => { 
+  let user = JSON.parse(localStorage.getItem('user'))
   let history = useNavigate() 
+
   const handleLogout = ()=>{
-    Cookies.remove("userId", {path:"/homepage", domain:"localhost"})
+    Cookies.remove("userId", {path:"/", domain:"localhost"})
     localStorage.clear()
+    //  localStorage.setItem("token","")
     console.log(localStorage);
     
+    // console.log(Cookies);
+    
     history("/")
+    
   }
+  // history("/")
   return (
     <>
       <div className="">
         <nav className="nav-bar">
-          <span className="user">User ID: {}</span>
+          <span className="user">User ID: {user.email}</span>
           <span className="logout">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -34,11 +40,13 @@ const NavBar = () => {
               <circle cx="12" cy="7" r="4"></circle>
             </svg>{" "}
             <Nav>
-              <NavDropdown title="User Name">
-                <NavDropdown.Item onClick={handleLogout}>Logout</NavDropdown.Item>
+              <NavDropdown title={user.email}>
+                
+              <button>  <NavDropdown.Item onClick={handleLogout} >Logout</NavDropdown.Item></button>
               </NavDropdown>
             </Nav>
             {/* <i class="arrow down"></i> */}
+            
           </span>
         </nav>
       </div>

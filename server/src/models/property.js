@@ -3,7 +3,7 @@ const sequencing = require('./sequencing');
 
 const propertySchema = new mongoose.Schema({
   // first
-  property_type: {
+  property: {
     type: String,
   },
   negotable: {

@@ -40,17 +40,20 @@ const SignIn = () => {
     if (data.status === 400) {
       alert(data.error);
       console.log(data);
+
     } else if (data.status === "not authorize") {
       alert("Wrong Password");
+
     } else if (data.status === "failed") {
       alert("User does not exists");
+      
     } else {
       localStorage.setItem("token", data.authtoken);
 
       localStorage.setItem("user", JSON.stringify(user));
 
       history("/homepage");
-      return data.authtoken
+       
     }
     
   }

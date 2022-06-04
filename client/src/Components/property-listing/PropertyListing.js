@@ -1,9 +1,9 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 // import App from './App';
 import { useState } from "react";
 import { useEffect } from "react";
-import { Link } from "react-router-dom";
+
 function Listing(){
   const [items, setItems] = useState([]);
 
@@ -40,7 +40,7 @@ function Listing(){
               placeholder="Search PPD ID"
               onChange={searchHandle}
             />
-            <svg
+            <svg id="search-icon"
               xmlns="http://www.w3.org/2000/svg"
               width="24"
               height="24"
@@ -58,11 +58,11 @@ function Listing(){
           </form>
         </div>
         <div className="addbutton">
-          {/* <Link to='/basicInfo'> */}
-          <button type="button" class="button">
-            + Add Property
+          
+          <button type="button" class="button"><Link to='/desktop'>
+            + Add Property</Link>
           </button>
-          {/* </Link> */}
+          
         </div>
       </div>
       <div class="container">
