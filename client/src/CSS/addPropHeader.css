@@ -42,17 +42,17 @@
   color: #AAAAAA;
 }
 
-#schange:hover {
+.schange {
   background: #6AB4F8;
   border-radius: 50px ;
 }
 
-#schange:hover .st {
+.schange .st {
   border-radius: 50px ;
   color: white;
 }
 
-#schange:hover .num {
+.schange .num {
   background: #ffffff;
   border-radius: 50px ;
   color: black;
