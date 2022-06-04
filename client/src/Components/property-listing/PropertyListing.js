@@ -11,8 +11,8 @@ const Listing=()=> {
     </div>
   </div>
   <div class="container">
-         <table class="table">
-           <tr>
+          <table class="table">
+            <tr>
               <th>PPD ID</th>
               <th>Image</th>
               <th>Property</th>
@@ -22,20 +22,21 @@ const Listing=()=> {
               <th>Status</th>
               <th>Days Left</th>
               <th>Action</th>
-              </tr>
-              <tr>
-                  <td>PPD001</td>
-                  <td>image</td>
-                  <td>plot</td>
-                  <td>123456987</td>
-                  <td>1200</td>
-                  <td>02</td>
-                  <td>sold</td>
-                  <td>00</td>
-                  <td>action</td>
-              </tr>        
+            </tr>
+            <tr>
+              <td>PPD001</td>
+              <td>image</td>
+              <td>plot</td>
+              <td>123456987</td>
+              <td>1200</td>
+              <td>02</td>
+              <td>sold</td>
+              <td>00</td>
+              <td>action</td>
+            </tr>        
           </table>
       </div> 
-  </>)}
-  
-  export default Listing;
+  </>
+)}
+
+export default Listing;
