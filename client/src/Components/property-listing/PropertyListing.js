@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 // import App from './App';
 import { useState } from "react";
 import { useEffect } from "react";
-
 const Listing = () => {
   const [items, setItems] = useState([]);
 
