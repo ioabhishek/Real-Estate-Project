@@ -15,8 +15,9 @@ const NavBar = () => {
     // console.log(Cookies);
     
     history("/")
-
+    
   }
+  // history("/")
   return (
     <>
       <div className="">
