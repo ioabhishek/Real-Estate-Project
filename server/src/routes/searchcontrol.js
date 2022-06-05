@@ -9,7 +9,7 @@ router.get('/search/:key', async (req, res) => {
           ]
       });
       console.log(key)
-      res.send(result);
+      res.json(result);
       // res.json(post);
     } catch(e) {
       console.log(e)

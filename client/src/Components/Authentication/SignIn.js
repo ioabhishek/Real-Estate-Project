@@ -69,7 +69,6 @@ const SignIn = () => {
             <br />
             <br />
             <div className="mb-3">
-              {/* <label htmlFor='exampleInputEmail1' className="form-label"> </label> */}
               <input
                 type="email"
                 className="form-control"
@@ -84,7 +83,6 @@ const SignIn = () => {
             </div>
             <br />
             <div className="mb-3">
-              {/* <label htmlFor='exampleInputPassword1' className="form-label"></label> */}
               <input
                 type="password"
                 className="form-control"
