@@ -9,7 +9,8 @@ function FourthStep({formData, setFormData}) {
         <div className="input-field">
           <label>Email</label>
           <input 
-            type="text"
+            type="email"
+            name='email'
             placeholder='Email'
             value={formData.email}
             onChange={(event) => setFormData({...formData, email: event.target.value})}

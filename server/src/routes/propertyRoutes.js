@@ -25,8 +25,10 @@ router.post('/addproperty', async(req, res) => {
 router.get('/addedproperty', async(req, res) => {
   try {
     let property = await Property.find();
+    property.reverse()
     res.send(property);
-    // res.json(post);
+    // res.json({property});
+    
   } catch(e) {
     console.log(e)
   }

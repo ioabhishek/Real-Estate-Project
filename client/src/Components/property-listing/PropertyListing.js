@@ -8,7 +8,7 @@ const Listing = () => {
 
   useEffect(() => {
     fetch("http://localhost:5000/addedproperty")
-      .then((res) => res.json())
+      .then(res => res.json())
       .then((result) => {
         setItems(result);
       })
@@ -16,7 +16,9 @@ const Listing = () => {
   }, []);
   console.log(items);
 
+
   const searchHandle = async (e) => {
+    console.log("*")
     let key = e.target.value;
     if (key) {
       let result = await fetch(`http://localhost:5000/search/${key}`);
@@ -25,7 +27,9 @@ const Listing = () => {
       if (data) {
         setItems(data);
       }
+      console.log(data);
     }
+    
   };
 
   return (
@@ -79,7 +83,7 @@ const Listing = () => {
           </tr>
 
           {
-          items.length > 0 ? 
+          // items.length > 0 ? 
             items.map((item, i) => (
               <tr key={i}>
                 <td>PPD000{item._id}</td>
@@ -93,8 +97,8 @@ const Listing = () => {
                 <td><span><i class="fa-solid fa-eye"></i></span><i class="fa-solid fa-pen"></i><span></span></td>
               </tr>
             ))
-          : 
-            <p className="res">No Result</p>
+          // : 
+          //   <p className="res">No Result</p>
           }
         </table>
       </div>
