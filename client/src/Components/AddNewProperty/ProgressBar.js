@@ -1,9 +1,15 @@
 import React from 'react';
 import "../../CSS/addPropHeader.css";
 
+
+
 const Progress = () => {
   return (
     <>
+    <div>
+      <div>
+        <h1 className='add-header'>ADD NEW PROPERTY</h1>
+      </div>
       <div className="steps">
         <div id="step" >
           <div className='num'>1</div>
@@ -22,6 +28,7 @@ const Progress = () => {
           <div className='st'>Location Info</div>
         </div>
       </div>
+    </div>
     </>
   );
 };
