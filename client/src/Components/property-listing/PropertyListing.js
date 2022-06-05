@@ -15,19 +15,14 @@ const Listing = () => {
       .catch((e) => console.log(e));
   }, []);
   console.log(items);
-  // console.log(items.PPDID)
+
 
   const searchHandle = async (e) => {
     console.log("*")
     let key = e.target.value;
     if (key) {
       let result = await fetch(`http://localhost:5000/search/${key}`);
-<<<<<<< HEAD
-      console.log(result)
-      const data = result.data;
-=======
       const data = await result.json();
->>>>>>> 5a9de51495ef464bfafb225aeade168c26e9e3b1
       console.log(data);
       if (data) {
         setItems(data);
@@ -91,17 +86,7 @@ const Listing = () => {
           // items.length > 0 ? 
             items.map((item, i) => (
               <tr key={i}>
-                <td>{item._id}</td>
-<<<<<<< HEAD
-                <td>image</td>
-                <td>{item.property}</td>
-                <td>{item.mobile}</td>
-                <td>{item.area}</td>
-                <td>{item.Views}</td>
-                <td>{item.Status}</td>
-                <td>{item.DaysLeft}</td>
-                <td>action</td>
-=======
+                <td>PPD00{item._id}</td>
                 <td><span><i class="fa-solid fa-images"></i></span></td>
                 <td>{item.property}</td>
                 <td>{item.mobile}</td>
@@ -110,7 +95,6 @@ const Listing = () => {
                 <td>Sold</td>
                 <td>04</td>
                 <td><span><i class="fa-solid fa-eye"></i></span><i class="fa-solid fa-pen"></i><span></span></td>
->>>>>>> 5a9de51495ef464bfafb225aeade168c26e9e3b1
               </tr>
             ))
           // : 
