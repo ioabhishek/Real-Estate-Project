@@ -3,14 +3,15 @@ const Property = require('../models/property');
 
 
 router.post('/addproperty', async(req, res) => {
-  console.log(req.body);
-  const { property, mobile, area } = req.body;
+  // console.log(req.body);
+  const { property, mobile, area, email } = req.body;
 
   try {
     let pro = new Property ({
       property: property,
       mobile: mobile,
-      area: area
+      area: area,
+      email: email
     });
 
     await pro.save();

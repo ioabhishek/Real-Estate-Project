@@ -13,7 +13,8 @@ function Form() {
   const [formData, setFormData] = useState({
     property: "",
     mobile: "",
-    area: ""
+    area: "",
+    email: ""
   })
 
   const FormTitles = ["Basic Info", "Property Details", "General Info", "Location Info"];
@@ -26,7 +27,7 @@ function Form() {
     } else if (page === 2) {
       return <Thirdstep formData={formData} setFormData={setFormData}/>
     } else {
-      return <Fourthstep/>
+      return <Fourthstep formData={formData} setFormData={setFormData}/>
     }
   }
 
@@ -50,7 +51,7 @@ function Form() {
               onClick={() => {
                 if (page === FormTitles.length-1) {
                   alert('Form Submitted')
-                  console.log(formData)
+                  // console.log(formData)
   ////////////////////////////////////////////////////
                   axios({
                     method: "post",

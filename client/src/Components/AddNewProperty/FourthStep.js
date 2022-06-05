@@ -1,7 +1,7 @@
 import React from 'react';
 import '../../CSS/form.css';
 
-function FourthStep() {
+function FourthStep({formData, setFormData}) {
   return (
     <div className='containter'>
 {/* ////////////////////////////////////////////////// */}
@@ -11,6 +11,8 @@ function FourthStep() {
           <input 
             type="text"
             placeholder='Email'
+            value={formData.email}
+            onChange={(event) => setFormData({...formData, email: event.target.value})}
           />
         </div>
 
