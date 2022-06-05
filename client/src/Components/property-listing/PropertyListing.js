@@ -78,7 +78,8 @@ const Listing = () => {
             <th>Action</th>
           </tr>
 
-          {items.length > 0 ? (
+          {
+          items.length > 0 ? 
             items.map((item, i) => (
               <tr key={i}>
                 <td>{item._id}</td>
@@ -92,10 +93,9 @@ const Listing = () => {
                 <td><span><i class="fa-solid fa-eye"></i></span><i class="fa-solid fa-pen"></i><span></span></td>
               </tr>
             ))
-          ) : (
+          : 
             <p className="res">No Result</p>
-          )}
-
+          }
         </table>
       </div>
     </>

@@ -11,8 +11,7 @@ const app = express();
 app.use(Cors());
 async function connectDB() {
   try {
-    await mongoose.connect("mongodb+srv://ioabhishek:ioabhishek123@cluster0.r2osl.mongodb.net/?retryWrites=true&w=majority");
-    
+    await mongoose.connect("mongodb+srv://ioabhishek:ioabhishek123@cluster0.r2osl.mongodb.net/?retryWrites=true&w=majority ")    
     console.log("Connection is successfull")
   } catch (e) {
     console.log(e);
