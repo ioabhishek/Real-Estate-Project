@@ -4,6 +4,7 @@ import Firststep from './FirstStep';
 import Secondstep from './SecondStep';
 import Thirdstep from './ThirdStep';
 import Fourthstep from './FourthStep';
+import Header from './Header';
 
 import '../../CSS/form.css';
 
@@ -30,42 +31,45 @@ function Form() {
   }
 
   return (
-    <div className='form'>
-      <div className="form-containter">
-        <div className="body">{PageDisplay()}</div>
-        <div className="footer">
-          <button 
-            className='prev'
-            disabled={page === 0}
-            onClick={() => {
-              setPage((currPage) => currPage - 1);  
-            }}
-          >Previous</button>
+    <>
+      <div className='pbar'> <Header/> </div>
+      <div className='form'>
+        <div className="form-containter">
+          <div className="body">{PageDisplay()}</div>
+          <div className="footer">
+            <button 
+              className='prev'
+              disabled={page === 0}
+              onClick={() => {
+                setPage((currPage) => currPage - 1);  
+              }}
+            >Previous</button>
 
-          <button 
-            className='next'
-            onClick={() => {
-              if (page === FormTitles.length-1) {
-                alert('Form Submitted')
-                console.log(formData)
-////////////////////////////////////////////////////
-                axios({
-                  method: "post",
-                  url: "http://localhost:5000/addproperty",
-                  data: formData
-                })
-//////////////////////////////////////////////////////
-              } else {
-                setPage((currPage) => currPage + 1);
-              }
-            }}
-          >
-            {page === FormTitles.length-1 ? "Add Property" : "Save & Continue"}
-          </button>
+            <button 
+              className='next'
+              onClick={() => {
+                if (page === FormTitles.length-1) {
+                  alert('Form Submitted')
+                  console.log(formData)
+  ////////////////////////////////////////////////////
+                  axios({
+                    method: "post",
+                    url: "http://localhost:5000/addproperty",
+                    data: formData
+                  })
+  //////////////////////////////////////////////////////
+                } else {
+                  setPage((currPage) => currPage + 1);
+                }
+              }}
+            >
+              {page === FormTitles.length-1 ? "Add Property" : "Save & Continue"}
+            </button>
+          </div>
         </div>
-      </div>
 
-    </div>
+      </div>
+    </>
   )
 }
 

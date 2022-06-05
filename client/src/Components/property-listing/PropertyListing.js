@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-// import App from './App';
 import { useState } from "react";
 import { useEffect } from "react";
+
 const Listing = () => {
   const [items, setItems] = useState([]);
 
@@ -10,7 +10,7 @@ const Listing = () => {
     fetch("http://localhost:5000/addedproperty")
       .then((res) => res.json())
       .then((result) => {
-        setItems(result.user);
+        setItems(result);
       })
       .catch((e) => console.log(e));
   }, []);
@@ -20,7 +20,6 @@ const Listing = () => {
     let key = e.target.value;
     if (key) {
       let result = await fetch(`http://localhost:5000/search/${key}`);
-
       const data = await result.json();
       console.log(data);
       if (data) {
@@ -28,6 +27,7 @@ const Listing = () => {
       }
     }
   };
+
   return (
     <>
       <div className="content">
@@ -81,20 +81,21 @@ const Listing = () => {
           {items.length > 0 ? (
             items.map((item, i) => (
               <tr key={i}>
-                <td>{item.PPDID}</td>
-                <td>image</td>
-                <td>{item.Property}</td>
-                <td>{item.Contact}</td>
-                <td>{item.Area}</td>
-                <td>{item.Views}</td>
-                <td>{item.Status}</td>
-                <td>{item.DaysLeft}</td>
-                <td>action</td>
+                <td>{item._id}</td>
+                <td><span><i class="fa-solid fa-images"></i></span></td>
+                <td>{item.property}</td>
+                <td>{item.mobile}</td>
+                <td>{item.area}</td>
+                <td>00</td>
+                <td>Sold</td>
+                <td>04</td>
+                <td><span><i class="fa-solid fa-eye"></i></span><i class="fa-solid fa-pen"></i><span></span></td>
               </tr>
             ))
           ) : (
             <p className="res">No Result</p>
           )}
+
         </table>
       </div>
     </>

@@ -53,7 +53,6 @@ const SignIn = () => {
       localStorage.setItem("user", JSON.stringify(user));
 
       history("/homepage");
-       
     }
     
   }
