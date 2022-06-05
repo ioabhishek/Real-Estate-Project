@@ -1,14 +1,14 @@
 // import './App.css';
 import NavBar from './Navbar';
-import LeftSideBar from './LeftSideBar';
-import PropertyListing from './PropertyListing';
+// import SideBar from './LeftSideBar';
+import Listing from './PropertyListing';
 // import Header from '../AddNewProperty/Header'
 
 const HomePage=()=> {
   return (<>
       <NavBar/>
-      <LeftSideBar/>
-      <PropertyListing/>
+      {/* <SideBar/> */}
+      <Listing/>
       {/* <Header/> */}
     </>)}
 

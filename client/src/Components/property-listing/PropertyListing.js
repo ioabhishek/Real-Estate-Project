@@ -9,26 +9,31 @@ function Listing(){
 
   useEffect(() => {
     fetch("http://localhost:5000/addedproperty")
-      .then((res) => res.json())
+      .then(res => res.json())
       .then((result) => {
-        setItems(result.user);
+        setItems(result);
       })
       .catch((e) => console.log(e));
   }, []);
   console.log(items);
+  // console.log(items.PPDID)
 
   const searchHandle = async (e) => {
+    console.log("*")
     let key = e.target.value;
     if (key) {
       let result = await fetch(`http://localhost:5000/search/${key}`);
-
-      const data = await result.json();
+      console.log(result)
+      const data = result.data;
       console.log(data);
       if (data) {
         setItems(data);
       }
+      console.log(data);
     }
+    
   };
+
   return (
     <>
       <div className="content">
@@ -80,22 +85,22 @@ function Listing(){
           </tr>
 
           {
-          items.length > 0 ? 
+          // items.length > 0 ? 
             items.map((item, i) => (
               <tr key={i}>
-                <td>{item.PPDID}</td>
+                <td>{item._id}</td>
                 <td>image</td>
-                <td>{item.Property}</td>
-                <td>{item.Contact}</td>
-                <td>{item.Area}</td>
+                <td>{item.property}</td>
+                <td>{item.mobile}</td>
+                <td>{item.area}</td>
                 <td>{item.Views}</td>
                 <td>{item.Status}</td>
                 <td>{item.DaysLeft}</td>
                 <td>action</td>
               </tr>
             ))
-          : 
-            <p className="res">No Result</p>
+          // : 
+          //   <p className="res">No Result</p>
           }
         </table>
       </div>

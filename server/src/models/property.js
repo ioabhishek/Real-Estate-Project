@@ -98,6 +98,7 @@ const propertySchema = new mongoose.Schema({
   // Fourth
   email: {
     type: String,
+    required:true,
   },
   city: {
     type: String,
