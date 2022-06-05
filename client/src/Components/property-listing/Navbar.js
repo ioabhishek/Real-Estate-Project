@@ -24,29 +24,15 @@ const NavBar = () => {
         <nav className="nav-bar">
           <span className="user">User ID: {user.email}</span>
           <span className="logout">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="20"
-              height="20"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              class="feather feather-user"
-            >
-              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-              <circle cx="12" cy="7" r="4"></circle>
-            </svg>{" "}
-            <Nav>
-              <NavDropdown title={user.email}>
-                
-              <button>  <NavDropdown.Item onClick={handleLogout} >Logout</NavDropdown.Item></button>
+            <i class="fa-solid fa-user"></i>{" "}
+            <Nav className="nav-logout">
+              <NavDropdown className="nav-email" title={user.email} >
+                <button>
+                  <NavDropdown.Item onClick={handleLogout} >Logout</NavDropdown.Item>
+                </button>
               </NavDropdown>
             </Nav>
-            {/* <i class="arrow down"></i> */}
-            
+            <i class="fa-solid fa-chevron-down"></i>
           </span>
         </nav>
       </div>

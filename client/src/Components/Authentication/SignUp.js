@@ -1,5 +1,7 @@
 import { Link,useNavigate } from "react-router-dom";
 import { useState } from "react";
+import '../../CSS/login.css';
+
 const SignUp=()=>{
   let history = useNavigate()
   const [newUser, setNewUser] = useState({
@@ -48,7 +50,6 @@ const SignUp=()=>{
           window.alert("Password did not matched")
         }
       }
-       
     }
 }
 
@@ -56,9 +57,9 @@ const SignUp=()=>{
   return(<>
   <div className="form-container">
         <div className="parent-container">
-        <form method="POST" className="login-form"><br />
-          <h1 className="logo">Logo</h1>
-          <p>Enter your credentials to access your account</p><br /><br />
+        <form method="POST" className="login-form signup-form"><br />
+          <h1 className="logo">Logo</h1><br />
+          <p>Create New Account</p><br /><br />
           <div className="mb-3">
             {/* <label htmlFor='exampleInputEmail1' className="form-label"> </label> */}
             <input
@@ -114,7 +115,7 @@ const SignUp=()=>{
         <br /><br />
         <div className="bottom-container">
           <p>
-            <Link to='/'>Sign In</Link>
+            <Link to='/' className="signin-link">Sign In</Link>
           </p>
         </div>
       </div>

@@ -35,6 +35,7 @@ const Listing = () => {
   return (
     <>
       <div className="content">
+
         <div className="searchbar">
           <form class="search-bar">
             <input
@@ -43,31 +44,17 @@ const Listing = () => {
               placeholder="Search PPD ID"
               onChange={searchHandle}
             />
-            <svg id="search-icon"
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="1.5"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              class="feather feather-search"
-            >
-              <circle cx="11" cy="11" r="8"></circle>
-              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-            </svg>
+            <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
           </form>
         </div>
+
         <div className="addbutton">
-          
-          <button type="button" class="button"><Link to='/desktop'>
+          <button type="button" class="button"><Link to='/desktop' className="addbutton">
             <span><i class="fa-solid fa-plus"></i></span>Add Property</Link>
           </button>
-          
         </div>
       </div>
+
       <div class="container">
         <table class="table">
           <tr>
