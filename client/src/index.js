@@ -7,7 +7,6 @@ import App from './App';
 // import LeftSideBar from './Components/property-listing/LeftSideBar';
 
 ReactDOM.render(
-  
     <App />,
     document.getElementById('root')
 );
