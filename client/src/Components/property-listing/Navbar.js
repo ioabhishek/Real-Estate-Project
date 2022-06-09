@@ -6,18 +6,14 @@ const NavBar = () => {
   let user = JSON.parse(localStorage.getItem('user'))
   let history = useNavigate() 
 
+ 
   const handleLogout = ()=>{
     Cookies.remove("userId", {path:"/", domain:"localhost"})
     localStorage.clear()
-    //  localStorage.setItem("token","")
+     localStorage.setItem("token","")
     console.log(localStorage);
-    
-    // console.log(Cookies);
-    
-    history("/")
-    
-  }
-  // history("/")
+  history("/")
+}
   return (
     <>
       <div className="">
